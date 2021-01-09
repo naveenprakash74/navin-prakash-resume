@@ -2,11 +2,11 @@
 
 import React from "react";
 import "./App.css";
-
-const App = () => {
+import MainApp from "./screens";
+const App = (props) => {
   return (
-    <div style={{ flex: 1, align: "center", justifyContent: "center", backgroundColor: "yellow" }}>
-      <div>Naveen prakash</div>
+    <div style={{ flex: 1, backgroundColor: "#fff" }}>
+      <MainApp {...props} />
     </div>
   );
 };

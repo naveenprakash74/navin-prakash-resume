@@ -12,9 +12,10 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 
-#root {
+#root > div {
   min-height: 100vh;
   display: flex;
+  /* height: 100vh; */
 }
 
 /* font-family: 'Heebo', sans-serif;
