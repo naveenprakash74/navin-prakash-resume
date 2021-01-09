@@ -27,9 +27,9 @@ export default class MainPage extends React.Component {
         >
           <Image source={MenuIcon} style={{ height: 20, width: 20 }} />
         </TouchableOpacity>
-        <Switch>
+        {/* <Switch>
           <Route path={"/"} render={(props) => <HomeScreen {...props} />} />
-        </Switch>
+        </Switch> */}
       </View>
     );
   }
