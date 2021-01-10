@@ -1,0 +1,23 @@
+firebase login 
+firebase login --reauth
+
+#rjun this commnd to configure firebase
+
+firebase init
+
+{
+  "hosting": {
+    "site": "navinprakash",
+    "public": "public",
+    ...
+  }
+}
+
+
+#command for deploy on firebase hosting
+firebase deploy --only hosting:navinprakash
+
+or
+
+
+firebase deploy 
