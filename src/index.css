@@ -20,3 +20,31 @@ code {
 
 /* font-family: 'Heebo', sans-serif;
 font-family: 'Tillana', cursive; */
+::placeholder {
+  /* Most modern browsers support this now. */
+  color: #e0e0e0;
+}
+.button {
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #9e9e9e;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.button:hover {
+  border-width: 2px;
+  border-color: #03dac6;
+}
+
+.btn {
+  border-width: 2px;
+  border-style: solid;
+  border-color: transparent;
+}
+.btn:hover {
+  border-color: #03dac6;
+  color: #03dac6;
+}

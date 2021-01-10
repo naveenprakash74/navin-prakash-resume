@@ -5,11 +5,16 @@ import { Route, Switch } from "react-router-dom";
 import { Image, TouchableOpacity, View } from "../components";
 import { MenuIcon } from "../images";
 import { shadow } from "../theme/shadow";
-
+import Home from "./Home";
+import Projects from "./Projects";
+import About from "./About";
+import ContactMe from "./ContactMe";
+import Skills from "./Skills";
+import Publications from "./Publications";
 export default class MainPage extends React.Component {
   render() {
     return (
-      <View>
+      <View style={{ flex: 1, overflow: "hidden" }}>
         <TouchableOpacity
           onPress={this.props.toggle}
           style={{
@@ -27,9 +32,15 @@ export default class MainPage extends React.Component {
         >
           <Image source={MenuIcon} style={{ height: 20, width: 20 }} />
         </TouchableOpacity>
-        {/* <Switch>
-          <Route path={"/"} render={(props) => <HomeScreen {...props} />} />
-        </Switch> */}
+        <Switch>
+          <Route exact path={"/"} render={(props) => <Home {...props} />} />
+          <Route path={"/home"} render={(props) => <Home {...props} />} />
+          <Route path={"/projects"} render={(props) => <Projects {...props} />} />
+          <Route path={"/skills"} render={(props) => <Skills {...props} />} />
+          <Route path={"/publications"} render={(props) => <Publications {...props} />} />
+          <Route path={"/contact"} render={(props) => <ContactMe {...props} />} />
+          <Route path={"/about"} render={(props) => <About {...props} />} />
+        </Switch>
       </View>
     );
   }

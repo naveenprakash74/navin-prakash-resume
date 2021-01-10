@@ -3,10 +3,10 @@ import React from "react";
 
 import { StyleSheet } from "./StyleSheet";
 
-const TextInput = (props) => {
+const TextAreaInput = (props) => {
   let { style, onPress, ...restProps } = props;
   style = StyleSheet.flatten(style);
   style = { display: "flex", flexDirection: "column", ...style };
-  return <input {...restProps} style={style} />;
+  return <textarea rows={6} {...restProps} style={style} />;
 };
-export default TextInput;
+export default TextAreaInput;
