@@ -2,8 +2,10 @@
   "name": "portfolio",
   "version": "0.1.0",
   "private": true,
-  "homepage": "index.js",
   "dependencies": {
+    "axios": "^0.21.1",
+    "firebase": "^8.2.2",
+    "node-sass": "^5.0.0",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
     "react-router-dom": "^5.2.0",

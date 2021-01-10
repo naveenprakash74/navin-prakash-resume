@@ -1,0 +1,6 @@
+{
+  "projects": {
+    "default": "myportfolio-9042a",
+    "staging": "myportfolio-9042a"
+  }
+}

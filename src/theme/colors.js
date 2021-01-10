@@ -9,5 +9,7 @@ export const colors = {
   surface_800: "#424242",
   surface_700: "#616161",
   shadowColor: "#9E9E9E",
-  borderColor:"#9E9E9E"
+  borderColor:"#9E9E9E",
+
+  surface_green:"#03DAC6"
 };

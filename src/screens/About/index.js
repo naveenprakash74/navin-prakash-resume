@@ -5,6 +5,7 @@ import { View, Text } from "../../components";
 import { colors } from "../../theme/colors";
 import { F1_M_HeadLine18, F1_M_HeadLine24 } from "../../theme/fonts";
 import { shadow } from "../../theme/shadow";
+import { isMobile } from "../../Utility";
 const { surface_800, textColor_50, textColor_200, borderColor, surface_700 } = colors;
 export default () => {
   return (
@@ -25,8 +26,9 @@ export default () => {
           ...shadow,
           padding: 20,
           backgroundColor: surface_700,
-          maxHeight: "50%",
-          maxWidth: "50%",
+          maxHeight: isMobile ? "60%" : "50%",
+          maxWidth: isMobile ? "80%" : "50%",
+          flex: 1,
         }}
       >
         <Text

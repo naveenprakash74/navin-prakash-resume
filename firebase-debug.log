@@ -1,0 +1,208 @@
+[debug] [2021-01-10T13:09:02.100Z] ----------------------------------------------------------------------
+[debug] [2021-01-10T13:09:02.104Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Navin\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy --only hosting:navinprakash
+[debug] [2021-01-10T13:09:02.104Z] CLI Version:   9.1.2
+[debug] [2021-01-10T13:09:02.104Z] Platform:      win32
+[debug] [2021-01-10T13:09:02.104Z] Node Version:  v14.15.1
+[debug] [2021-01-10T13:09:02.106Z] Time:          Sun Jan 10 2021 18:39:02 GMT+0530 (India Standard Time)
+[debug] [2021-01-10T13:09:02.106Z] ----------------------------------------------------------------------
+[debug] [2021-01-10T13:09:02.106Z] 
+[debug] [2021-01-10T13:09:02.117Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-01-10T13:09:02.118Z] > authorizing via signed-in user
+[debug] [2021-01-10T13:09:02.118Z] [iam] checking project myportfolio-9042a for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2021-01-10T13:09:02.122Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2021-01-10T13:09:02.122Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2021-01-10T13:09:05.342Z] <<< HTTP RESPONSE 200 {"pragma":"no-cache","expires":"Mon, 01 Jan 1990 00:00:00 GMT","cache-control":"no-cache, no-store, max-age=0, must-revalidate","date":"Sun, 10 Jan 2021 13:09:04 GMT","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-01-10T13:09:05.359Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/myportfolio-9042a:testIamPermissions  
+ {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2021-01-10T13:09:26.407Z] [iam] error while checking permissions, command may fail: FirebaseError: Server Error. connect ETIMEDOUT 216.58.196.202:443
+[debug] [2021-01-10T13:09:26.410Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/myportfolio-9042a  
+ 
+[debug] [2021-01-10T13:09:30.367Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Sun, 10 Jan 2021 13:09:30 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[info] 
+[info] === Deploying to 'myportfolio-9042a'...
+[info] 
+[info] i  deploying hosting 
+[debug] [2021-01-10T13:09:30.384Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/navinprakash/versions  
+ {"config":{"rewrites":[{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2021-01-10T13:09:37.651Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Sun, 10 Jan 2021 13:09:36 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[info] i  hosting[navinprakash]: beginning deploy... 
+[info] i  hosting[navinprakash]: found 39 files in build 
+[debug] [2021-01-10T13:09:37.694Z] > refreshing access token with scopes: []
+[debug] [2021-01-10T13:09:37.694Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2021-01-10T13:09:37.698Z] [hosting] hash cache [YnVpbGQ] stored for 39 files
+[debug] [2021-01-10T13:09:37.699Z] [hosting][hash queue][FINAL] {"max":5,"min":0,"avg":0,"active":0,"complete":39,"success":39,"errored":0,"retried":0,"total":39,"elapsed":12}
+[debug] [2021-01-10T13:09:42.282Z] <<< HTTP RESPONSE 200 {"pragma":"no-cache","cache-control":"no-cache, no-store, max-age=0, must-revalidate","date":"Sun, 10 Jan 2021 13:09:41 GMT","expires":"Mon, 01 Jan 1990 00:00:00 GMT","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-01-10T13:09:42.294Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/sites/navinprakash/versions/06b39ce4fa2372e6:populateFiles [none]
+[debug] [2021-01-10T13:09:42.295Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/sites/navinprakash/versions/06b39ce4fa2372e6:populateFiles {"files":{"/asset-manifest.json":"29a43342175711825940b63e456ca45f9bee77947df523b1f09b6f60e4399cdf","/favicon.ico":"8a1ab86216c9133e6fd3ed9145f6336c97d7e554a2466130834fa50167dbc282","/Heebo-Bold.ttf":"f33d4ab9e2d0f20b59423206f3cbf14ed22ee88f5b38ad8cc1999451ab417bb5","/Heebo-Light.ttf":"50b43d35381763c25846d66932988d87d0b1f62d62b791833aca77dbaf5658a8","/Heebo-Medium.ttf":"68b7155e9d7373c9655ad39b78652de22d0f0fb788050e8158fad9e8fe1fd8c3","/Heebo-Regular.ttf":"4d693877a9b489c33fc5fccac5a556402e14cdc4d5ac50eb23c6a2d6440f922c","/index.html":"f08b9eb54da0eaf3fb8022fd92b7dfb4ae07a408a7ca82830be9c0251cf3d08e","/logo192.png":"64a7c5ee82990a087a975f133e96b8d3ba1ebd8a2c2d4b5d8a4aa1533f504771","/logo512.png":"e0ca6600b9e42f7566d67752bbc5afb107fd792bc20599a0dbd4d195df1ceb27","/manifest.json":"aff3449bdc238776f5d6d967f19ec491b36aed5fb7f23ccff6500736fd58494a","/precache-manifest.97b204cd575d27a2e2b6b65a56fe4331.js":"dfb20a45e5ebd0c6da1eb1bd1c06335c8b888df1b56d483ab308d594c536ddba","/README.txt":"f1f7c1f39afe33f321bd6d903e3429748cd6f7071c3ed5c16714a50536764f84","/service-worker.js":"9462a63f11168995556945a5a66ac8c198698b5e7241d897e2f6a47a9d244543","/Tillana-Bold.ttf":"6609201f966acd1cc499466bf9fb42e10763f47ccca19a31ee2af965c132dc71","/Tillana-Medium.ttf":"a37df477fe7fbaecf5d3016d40e63aec688f15a3b15c82b80e1d4a78cc73101b","/Tillana-Regular.ttf":"650704e179c37420595d8dd8f2c60ee990853000ef586a13a992119d443cf29a","/images/aboutMe.svg":"eb4bfcb69ccdf2169dc3519621c24179326886d5132a7c6ff3ceef854805bbf9","/images/aboutMeLight.svg":"8fe9697e660cf8daf43de353f02dd6257db546ae909c925c592adaa4f5c4d9fb","/images/constactMe.svg":"63fec9184f398baac400e5eb1f317d3a9cdd0faff60a8100cd830c59a82ea6ae","/images/constactMeLight.svg":"84acb23548653001766dd2c3fd11b6d4b32ad89f43a89cf3a94b2c555b4873b9","/images/HomeDark.svg":"b49e52b93aedd5322b81b9a9c3bf68872103287e431133b5d9ecbb06c1609cbf","/images/homeLight.svg":"784d22bd015283b592d9edd94748fa80ffa2f2377f7926cc484580a666786cb7","/images/menu.svg":"e3a182d967c83cc8ee01def180c7ae72ecd7a1fe25a406645d259d0b3937a7c2","/images/menuLight.svg":"53af74b2a32c098b7fda28b9d59530edfd7acf6c4f3de6339b6025b1a657edbc","/images/ProfilePhoto.jpg":"27c5d98a08beee7580aec9cc7911644011722740b2d811c4e817be646375ba4f","/images/projects.svg":"c3fd3bd2abe84473f53b4927829e92d2a709f1712cee9813adf684f651d2563f","/images/projectsLight.svg":"687b8f79cd61f49caa9078a345f66a38b698ceee77cf1be4ecb9887c3fe225f9","/images/publications.svg":"854ed105426c5e0c033fb4fddcff63e8e73fb445c8b13b054654f06521713e03","/images/publicationsLight.svg":"30a4d77bbfa02df913818e62e7a41e18c6879abaa3257645366f8cff1843babb","/images/skills.svg":"b897164f937543f8bc102d5fa02b1be4f093526ce7d0fcc67124085a79d22628","/images/skillsLight.svg":"d0e04c05a6421098419bd00eede34781adc286944802a10726d9704c6e5fb2ad","/static/css/main.8df63efb.chunk.css":"9b21495385308d68a8c1eda3b41f09e652b3be391886001e89c80c1b61143109","/static/css/main.8df63efb.chunk.css.map":"1767fc5d27fd2e4945017d8b179cbb1dd5796993aa24bdcd5d2e7a6b341b7e88","/static/js/2.dfdc02e1.chunk.js":"4ca18d055c9c821c83366240105108316d450581b4c693c6bb17c6a7f0a3aaf3","/static/js/2.dfdc02e1.chunk.js.map":"4c5bfacc949d04e8461f1a0444107d013428424f7c271a70d9569cead40531f2","/static/js/main.f65290ab.chunk.js":"204cf2d38c99d3eeb2b496e3140f5fd5814f5f0f4b03fe35e70bc74370a91564","/static/js/main.f65290ab.chunk.js.map":"a4b3222f48793ad8c59a16ed28be11907341ffac6b88ab21f4875936217c4bd4","/static/js/runtime-main.69cc197a.js":"6c94175a8064307f6e0d22619b76e721cc9f7b800b813c13a7ae1875717a9bb0","/static/js/runtime-main.69cc197a.js.map":"95cb270f0be4e687a2a96e7471e09f406bb80afb186de773753dfcf0004666e6"}}
+[debug] [2021-01-10T13:09:49.082Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/sites/navinprakash/versions/06b39ce4fa2372e6:populateFiles 200
+[debug] [2021-01-10T13:09:49.082Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/sites/navinprakash/versions/06b39ce4fa2372e6:populateFiles {"uploadUrl":"https://upload-firebasehosting.googleapis.com/upload/sites/navinprakash/versions/06b39ce4fa2372e6/files"}
+[debug] [2021-01-10T13:09:49.082Z] [hosting][populate queue][FINAL] {"max":11389,"min":11389,"avg":11389,"active":0,"complete":1,"success":1,"errored":0,"retried":0,"total":1,"elapsed":11389}
+[debug] [2021-01-10T13:09:49.083Z] [hosting] uploads queued: 0
+[debug] [2021-01-10T13:09:49.083Z] [hosting][upload queue][FINAL] {"max":0,"min":9999999999,"avg":0,"active":0,"complete":0,"success":0,"errored":0,"retried":0,"total":0,"elapsed":1610284189083}
+[info] +  hosting[navinprakash]: file upload complete 
+[debug] [2021-01-10T13:09:49.084Z] [hosting] deploy completed after 11431ms
+[debug] [2021-01-10T13:09:52.763Z] [
+  {
+    "config": {
+      "site": "navinprakash",
+      "public": "build",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
+    },
+    "site": "navinprakash",
+    "version": "sites/navinprakash/versions/06b39ce4fa2372e6"
+  }
+]
+[info] i  hosting[navinprakash]: finalizing version... 
+[debug] [2021-01-10T13:09:52.766Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2021-01-10T13:09:52.767Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2021-01-10T13:09:55.762Z] <<< HTTP RESPONSE 200 {"date":"Sun, 10 Jan 2021 13:09:55 GMT","pragma":"no-cache","expires":"Mon, 01 Jan 1990 00:00:00 GMT","cache-control":"no-cache, no-store, max-age=0, must-revalidate","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-01-10T13:09:55.775Z] >>> HTTP REQUEST PATCH https://firebasehosting.googleapis.com/v1beta1/sites/navinprakash/versions/06b39ce4fa2372e6?updateMask=status  
+ {"status":"FINALIZED"}
+[debug] [2021-01-10T13:10:00.708Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Sun, 10 Jan 2021 13:10:00 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-01-10T13:10:00.709Z] [hosting] finalized version for navinprakash: {"name":"sites/navinprakash/versions/06b39ce4fa2372e6","status":"FINALIZED","config":{"rewrites":[{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"},"createTime":"2021-01-10T13:09:36.585345Z","createUser":{"email":"naveenprakash74@gmail.com"},"finalizeTime":"2021-01-10T13:10:00.694066Z","finalizeUser":{"email":"naveenprakash74@gmail.com"}}
+[info] +  hosting[navinprakash]: version finalized 
+[info] i  hosting[navinprakash]: releasing new version... 
+[debug] [2021-01-10T13:10:00.715Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/navinprakash/releases?version_name=sites/navinprakash/versions/06b39ce4fa2372e6  
+ {"message":null}
+[debug] [2021-01-10T13:10:42.794Z] Error: connect ETIMEDOUT 216.58.200.170:443
+    at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1146:16)
+[error] 
+[error] Error: Server Error. connect ETIMEDOUT 216.58.200.170:443
+[debug] [2021-01-10T13:13:06.196Z] ----------------------------------------------------------------------
+[debug] [2021-01-10T13:13:06.200Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Navin\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy --only hosting:navinprakash
+[debug] [2021-01-10T13:13:06.200Z] CLI Version:   9.1.2
+[debug] [2021-01-10T13:13:06.201Z] Platform:      win32
+[debug] [2021-01-10T13:13:06.201Z] Node Version:  v14.15.1
+[debug] [2021-01-10T13:13:06.202Z] Time:          Sun Jan 10 2021 18:43:06 GMT+0530 (India Standard Time)
+[debug] [2021-01-10T13:13:06.202Z] ----------------------------------------------------------------------
+[debug] [2021-01-10T13:13:06.202Z] 
+[debug] [2021-01-10T13:13:06.212Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-01-10T13:13:06.213Z] > authorizing via signed-in user
+[debug] [2021-01-10T13:13:06.213Z] [iam] checking project myportfolio-9042a for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2021-01-10T13:13:06.217Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/myportfolio-9042a:testIamPermissions  
+ {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2021-01-10T13:13:08.277Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Sun, 10 Jan 2021 13:13:08 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=1428","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-01-10T13:13:08.284Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/myportfolio-9042a  
+ 
+[debug] [2021-01-10T13:13:09.064Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Sun, 10 Jan 2021 13:13:09 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[info] 
+[info] === Deploying to 'myportfolio-9042a'...
+[info] 
+[info] i  deploying hosting 
+[debug] [2021-01-10T13:13:09.085Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/navinprakash/versions  
+ {"config":{"rewrites":[{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2021-01-10T13:13:30.818Z] Error: connect ETIMEDOUT 216.58.200.170:443
+    at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1146:16)
+[error] 
+[error] Error: Server Error. connect ETIMEDOUT 216.58.200.170:443
+[debug] [2021-01-10T13:13:41.061Z] ----------------------------------------------------------------------
+[debug] [2021-01-10T13:13:41.064Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Navin\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2021-01-10T13:13:41.064Z] CLI Version:   9.1.2
+[debug] [2021-01-10T13:13:41.065Z] Platform:      win32
+[debug] [2021-01-10T13:13:41.065Z] Node Version:  v14.15.1
+[debug] [2021-01-10T13:13:41.066Z] Time:          Sun Jan 10 2021 18:43:41 GMT+0530 (India Standard Time)
+[debug] [2021-01-10T13:13:41.066Z] ----------------------------------------------------------------------
+[debug] [2021-01-10T13:13:41.067Z] 
+[debug] [2021-01-10T13:13:41.080Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-01-10T13:13:41.082Z] > authorizing via signed-in user
+[debug] [2021-01-10T13:13:41.082Z] [iam] checking project myportfolio-9042a for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2021-01-10T13:13:41.087Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/myportfolio-9042a:testIamPermissions  
+ {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2021-01-10T13:13:43.314Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Sun, 10 Jan 2021 13:13:43 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=1447","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-01-10T13:13:43.322Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/myportfolio-9042a  
+ 
+[debug] [2021-01-10T13:13:44.034Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Sun, 10 Jan 2021 13:13:44 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[info] 
+[info] === Deploying to 'myportfolio-9042a'...
+[info] 
+[info] i  deploying hosting 
+[debug] [2021-01-10T13:13:44.064Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/navinprakash/versions  
+ {"config":{"rewrites":[{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2021-01-10T13:13:46.266Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Sun, 10 Jan 2021 13:13:46 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[info] i  hosting[navinprakash]: beginning deploy... 
+[info] i  hosting[navinprakash]: found 39 files in build 
+[debug] [2021-01-10T13:13:47.226Z] > refreshing access token with scopes: []
+[debug] [2021-01-10T13:13:47.226Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2021-01-10T13:13:47.231Z] [hosting] hash cache [YnVpbGQ] stored for 39 files
+[debug] [2021-01-10T13:13:47.231Z] [hosting][hash queue][FINAL] {"max":899,"min":5,"avg":35.02564102564103,"active":0,"complete":39,"success":39,"errored":0,"retried":0,"total":39,"elapsed":919}
+[debug] [2021-01-10T13:13:47.758Z] <<< HTTP RESPONSE 200 {"cache-control":"no-cache, no-store, max-age=0, must-revalidate","expires":"Mon, 01 Jan 1990 00:00:00 GMT","pragma":"no-cache","date":"Sun, 10 Jan 2021 13:13:47 GMT","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-01-10T13:13:47.781Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/sites/navinprakash/versions/88750613e13ec0df:populateFiles [none]
+[debug] [2021-01-10T13:13:47.782Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/sites/navinprakash/versions/88750613e13ec0df:populateFiles {"files":{"/favicon.ico":"8a1ab86216c9133e6fd3ed9145f6336c97d7e554a2466130834fa50167dbc282","/Heebo-Bold.ttf":"f33d4ab9e2d0f20b59423206f3cbf14ed22ee88f5b38ad8cc1999451ab417bb5","/Heebo-Light.ttf":"50b43d35381763c25846d66932988d87d0b1f62d62b791833aca77dbaf5658a8","/Heebo-Medium.ttf":"68b7155e9d7373c9655ad39b78652de22d0f0fb788050e8158fad9e8fe1fd8c3","/Heebo-Regular.ttf":"4d693877a9b489c33fc5fccac5a556402e14cdc4d5ac50eb23c6a2d6440f922c","/logo192.png":"64a7c5ee82990a087a975f133e96b8d3ba1ebd8a2c2d4b5d8a4aa1533f504771","/logo512.png":"e0ca6600b9e42f7566d67752bbc5afb107fd792bc20599a0dbd4d195df1ceb27","/manifest.json":"aff3449bdc238776f5d6d967f19ec491b36aed5fb7f23ccff6500736fd58494a","/README.txt":"f1f7c1f39afe33f321bd6d903e3429748cd6f7071c3ed5c16714a50536764f84","/Tillana-Bold.ttf":"6609201f966acd1cc499466bf9fb42e10763f47ccca19a31ee2af965c132dc71","/Tillana-Medium.ttf":"a37df477fe7fbaecf5d3016d40e63aec688f15a3b15c82b80e1d4a78cc73101b","/Tillana-Regular.ttf":"650704e179c37420595d8dd8f2c60ee990853000ef586a13a992119d443cf29a","/images/aboutMe.svg":"eb4bfcb69ccdf2169dc3519621c24179326886d5132a7c6ff3ceef854805bbf9","/images/aboutMeLight.svg":"8fe9697e660cf8daf43de353f02dd6257db546ae909c925c592adaa4f5c4d9fb","/images/constactMe.svg":"63fec9184f398baac400e5eb1f317d3a9cdd0faff60a8100cd830c59a82ea6ae","/images/constactMeLight.svg":"84acb23548653001766dd2c3fd11b6d4b32ad89f43a89cf3a94b2c555b4873b9","/images/HomeDark.svg":"b49e52b93aedd5322b81b9a9c3bf68872103287e431133b5d9ecbb06c1609cbf","/images/homeLight.svg":"784d22bd015283b592d9edd94748fa80ffa2f2377f7926cc484580a666786cb7","/images/menu.svg":"e3a182d967c83cc8ee01def180c7ae72ecd7a1fe25a406645d259d0b3937a7c2","/images/menuLight.svg":"53af74b2a32c098b7fda28b9d59530edfd7acf6c4f3de6339b6025b1a657edbc","/images/ProfilePhoto.jpg":"27c5d98a08beee7580aec9cc7911644011722740b2d811c4e817be646375ba4f","/images/projects.svg":"c3fd3bd2abe84473f53b4927829e92d2a709f1712cee9813adf684f651d2563f","/images/projectsLight.svg":"687b8f79cd61f49caa9078a345f66a38b698ceee77cf1be4ecb9887c3fe225f9","/images/publications.svg":"854ed105426c5e0c033fb4fddcff63e8e73fb445c8b13b054654f06521713e03","/images/publicationsLight.svg":"30a4d77bbfa02df913818e62e7a41e18c6879abaa3257645366f8cff1843babb","/images/skills.svg":"b897164f937543f8bc102d5fa02b1be4f093526ce7d0fcc67124085a79d22628","/images/skillsLight.svg":"d0e04c05a6421098419bd00eede34781adc286944802a10726d9704c6e5fb2ad","/asset-manifest.json":"7c0a6a1b32f8b2a2c17d5ce5be792883ec333cef2597352829fd25b13f09c2f0","/index.html":"8aef803a74b59954dd36ef145054f30d5bb855b1d3031608d6edc0c84ad077fa","/precache-manifest.6ef0d15e38faa1d7fc3c6f3840ea17f4.js":"f89ab2af1612ebc2986750a0b1712a8990030420139825052c4d8eba3d4030c5","/service-worker.js":"0f4fffeb1bac5c7ffd6f9f16a9797946c2245d8f9a57e9dd1e0c289e6f6fd0ca","/static/css/main.8df63efb.chunk.css":"9b21495385308d68a8c1eda3b41f09e652b3be391886001e89c80c1b61143109","/static/css/main.8df63efb.chunk.css.map":"1767fc5d27fd2e4945017d8b179cbb1dd5796993aa24bdcd5d2e7a6b341b7e88","/static/js/main.f65290ab.chunk.js":"204cf2d38c99d3eeb2b496e3140f5fd5814f5f0f4b03fe35e70bc74370a91564","/static/js/runtime-main.69cc197a.js":"6c94175a8064307f6e0d22619b76e721cc9f7b800b813c13a7ae1875717a9bb0","/static/js/runtime-main.69cc197a.js.map":"95cb270f0be4e687a2a96e7471e09f406bb80afb186de773753dfcf0004666e6","/static/js/main.f65290ab.chunk.js.map":"a4b3222f48793ad8c59a16ed28be11907341ffac6b88ab21f4875936217c4bd4","/static/js/2.dfdc02e1.chunk.js":"4ca18d055c9c821c83366240105108316d450581b4c693c6bb17c6a7f0a3aaf3","/static/js/2.dfdc02e1.chunk.js.map":"4c5bfacc949d04e8461f1a0444107d013428424f7c271a70d9569cead40531f2"}}
+[debug] [2021-01-10T13:13:49.987Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/sites/navinprakash/versions/88750613e13ec0df:populateFiles 200
+[debug] [2021-01-10T13:13:49.988Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/sites/navinprakash/versions/88750613e13ec0df:populateFiles {"uploadRequiredHashes":["f89ab2af1612ebc2986750a0b1712a8990030420139825052c4d8eba3d4030c5","0f4fffeb1bac5c7ffd6f9f16a9797946c2245d8f9a57e9dd1e0c289e6f6fd0ca","8aef803a74b59954dd36ef145054f30d5bb855b1d3031608d6edc0c84ad077fa","7c0a6a1b32f8b2a2c17d5ce5be792883ec333cef2597352829fd25b13f09c2f0"],"uploadUrl":"https://upload-firebasehosting.googleapis.com/upload/sites/navinprakash/versions/88750613e13ec0df/files"}
+[debug] [2021-01-10T13:13:49.992Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/navinprakash/versions/88750613e13ec0df/files/f89ab2af1612ebc2986750a0b1712a8990030420139825052c4d8eba3d4030c5 [none]
+[debug] [2021-01-10T13:13:49.993Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/navinprakash/versions/88750613e13ec0df/files/f89ab2af1612ebc2986750a0b1712a8990030420139825052c4d8eba3d4030c5 [stream]
+[debug] [2021-01-10T13:13:49.996Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/navinprakash/versions/88750613e13ec0df/files/0f4fffeb1bac5c7ffd6f9f16a9797946c2245d8f9a57e9dd1e0c289e6f6fd0ca [none]
+[debug] [2021-01-10T13:13:49.996Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/navinprakash/versions/88750613e13ec0df/files/0f4fffeb1bac5c7ffd6f9f16a9797946c2245d8f9a57e9dd1e0c289e6f6fd0ca [stream]
+[debug] [2021-01-10T13:13:49.998Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/navinprakash/versions/88750613e13ec0df/files/8aef803a74b59954dd36ef145054f30d5bb855b1d3031608d6edc0c84ad077fa [none]
+[debug] [2021-01-10T13:13:49.998Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/navinprakash/versions/88750613e13ec0df/files/8aef803a74b59954dd36ef145054f30d5bb855b1d3031608d6edc0c84ad077fa [stream]
+[debug] [2021-01-10T13:13:49.999Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/navinprakash/versions/88750613e13ec0df/files/7c0a6a1b32f8b2a2c17d5ce5be792883ec333cef2597352829fd25b13f09c2f0 [none]
+[debug] [2021-01-10T13:13:49.999Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/navinprakash/versions/88750613e13ec0df/files/7c0a6a1b32f8b2a2c17d5ce5be792883ec333cef2597352829fd25b13f09c2f0 [stream]
+[debug] [2021-01-10T13:13:50.001Z] [hosting][populate queue][FINAL] {"max":2768,"min":2768,"avg":2768,"active":0,"complete":1,"success":1,"errored":0,"retried":0,"total":1,"elapsed":2777}
+[debug] [2021-01-10T13:13:50.002Z] [hosting] uploads queued: 4
+[debug] [2021-01-10T13:13:53.337Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/navinprakash/versions/88750613e13ec0df/files/7c0a6a1b32f8b2a2c17d5ce5be792883ec333cef2597352829fd25b13f09c2f0 200
+[debug] [2021-01-10T13:13:53.337Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/navinprakash/versions/88750613e13ec0df/files/7c0a6a1b32f8b2a2c17d5ce5be792883ec333cef2597352829fd25b13f09c2f0 [stream]
+[debug] [2021-01-10T13:13:53.339Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/navinprakash/versions/88750613e13ec0df/files/f89ab2af1612ebc2986750a0b1712a8990030420139825052c4d8eba3d4030c5 200
+[debug] [2021-01-10T13:13:53.340Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/navinprakash/versions/88750613e13ec0df/files/f89ab2af1612ebc2986750a0b1712a8990030420139825052c4d8eba3d4030c5 [stream]
+[debug] [2021-01-10T13:14:11.601Z] [uploadQueue] Retrying task 0f4fffeb1bac5c7ffd6f9f16a9797946c2245d8f9a57e9dd1e0c289e6f6fd0ca
+[debug] [2021-01-10T13:14:11.602Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/navinprakash/versions/88750613e13ec0df/files/0f4fffeb1bac5c7ffd6f9f16a9797946c2245d8f9a57e9dd1e0c289e6f6fd0ca [none]
+[debug] [2021-01-10T13:14:11.602Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/navinprakash/versions/88750613e13ec0df/files/0f4fffeb1bac5c7ffd6f9f16a9797946c2245d8f9a57e9dd1e0c289e6f6fd0ca [stream]
+[debug] [2021-01-10T13:14:11.605Z] [uploadQueue] Retrying task 8aef803a74b59954dd36ef145054f30d5bb855b1d3031608d6edc0c84ad077fa
+[debug] [2021-01-10T13:14:11.606Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/navinprakash/versions/88750613e13ec0df/files/8aef803a74b59954dd36ef145054f30d5bb855b1d3031608d6edc0c84ad077fa [none]
+[debug] [2021-01-10T13:14:11.606Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/navinprakash/versions/88750613e13ec0df/files/8aef803a74b59954dd36ef145054f30d5bb855b1d3031608d6edc0c84ad077fa [stream]
+[debug] [2021-01-10T13:14:13.530Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/navinprakash/versions/88750613e13ec0df/files/8aef803a74b59954dd36ef145054f30d5bb855b1d3031608d6edc0c84ad077fa 200
+[debug] [2021-01-10T13:14:13.531Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/navinprakash/versions/88750613e13ec0df/files/8aef803a74b59954dd36ef145054f30d5bb855b1d3031608d6edc0c84ad077fa [stream]
+[debug] [2021-01-10T13:14:33.450Z] [uploadQueue] Retrying task 0f4fffeb1bac5c7ffd6f9f16a9797946c2245d8f9a57e9dd1e0c289e6f6fd0ca
+[debug] [2021-01-10T13:14:33.452Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/navinprakash/versions/88750613e13ec0df/files/0f4fffeb1bac5c7ffd6f9f16a9797946c2245d8f9a57e9dd1e0c289e6f6fd0ca [none]
+[debug] [2021-01-10T13:14:33.453Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/navinprakash/versions/88750613e13ec0df/files/0f4fffeb1bac5c7ffd6f9f16a9797946c2245d8f9a57e9dd1e0c289e6f6fd0ca [stream]
+[debug] [2021-01-10T13:14:35.460Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/navinprakash/versions/88750613e13ec0df/files/0f4fffeb1bac5c7ffd6f9f16a9797946c2245d8f9a57e9dd1e0c289e6f6fd0ca 200
+[debug] [2021-01-10T13:14:35.461Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/navinprakash/versions/88750613e13ec0df/files/0f4fffeb1bac5c7ffd6f9f16a9797946c2245d8f9a57e9dd1e0c289e6f6fd0ca [stream]
+[debug] [2021-01-10T13:14:35.461Z] [hosting][upload queue][FINAL] {"max":3352,"min":1926,"avg":2658.5,"active":0,"complete":4,"success":4,"errored":0,"retried":3,"total":4,"elapsed":45473}
+[info] +  hosting[navinprakash]: file upload complete 
+[debug] [2021-01-10T13:14:35.462Z] [hosting] deploy completed after 49194ms
+[debug] [2021-01-10T13:14:35.861Z] [
+  {
+    "config": {
+      "site": "navinprakash",
+      "public": "build",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
+    },
+    "site": "navinprakash",
+    "version": "sites/navinprakash/versions/88750613e13ec0df"
+  }
+]
+[info] i  hosting[navinprakash]: finalizing version... 
+[debug] [2021-01-10T13:14:35.865Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2021-01-10T13:14:35.866Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2021-01-10T13:14:36.380Z] <<< HTTP RESPONSE 200 {"date":"Sun, 10 Jan 2021 13:14:36 GMT","cache-control":"no-cache, no-store, max-age=0, must-revalidate","expires":"Mon, 01 Jan 1990 00:00:00 GMT","pragma":"no-cache","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-01-10T13:14:36.392Z] >>> HTTP REQUEST PATCH https://firebasehosting.googleapis.com/v1beta1/sites/navinprakash/versions/88750613e13ec0df?updateMask=status  
+ {"status":"FINALIZED"}
+[debug] [2021-01-10T13:15:20.204Z] Error: connect ETIMEDOUT 172.217.160.234:443
+    at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1146:16)
+[error] 
+[error] Error: Server Error. connect ETIMEDOUT 172.217.160.234:443

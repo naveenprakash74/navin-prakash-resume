@@ -1,15 +1,18 @@
 /** @format */
 
 import React, { useState } from "react";
+import { db } from "../../firebase/firebaseConfig";
 import { View, Text, TextInput, TouchableOpacity, TextAreaInput } from "../../components";
 import { colors } from "../../theme/colors";
-import { F1_M_HeadLine18, F1_M_HeadLine24, F1_R_HeadLine16 } from "../../theme/fonts";
-const { surface_800, textColor_50, textColor_200, borderColor, surface_700, textColor_300 } = colors;
-export default () => {
+import { F1_M_HeadLine14, F1_M_HeadLine18, F1_M_HeadLine24, F1_R_HeadLine16 } from "../../theme/fonts";
+import { isMobile } from "../../Utility";
+const { surface_800, textColor_50, surface_green, textColor_200, borderColor, surface_700, textColor_300 } = colors;
+export default (props) => {
   const [name, setName] = useState(void 0);
   const [message, setMessage] = useState(void 0);
   const [email, setEmail] = useState(void 0);
   const [subject, setSubject] = useState(void 0);
+  const [successMessage, setsuccessMessage] = useState(void 0);
   const textInputStyle = {
     padding: 20,
     paddingLeft: 20,
@@ -47,8 +50,15 @@ export default () => {
           <Text style={{ marginTop: 12, color: textColor_200, ...F1_M_HeadLine18 }}>
             Have a question or want to work together?
           </Text>
+          {successMessage ? (
+            <Text style={{ marginTop: 12, color: surface_green, ...F1_M_HeadLine14 }}>
+              Thanks for contact. I well reach to you soon.
+            </Text>
+          ) : (
+            void 0
+          )}
         </View>
-        <View style={{ flexDirection: "row", flex: 1, paddingTop: 12 }}>
+        <View style={{ flexDirection: isMobile ? "column" : "row", flex: 1, paddingTop: 12 }}>
           <TextInput
             value={name}
             onChange={(event) => {
@@ -59,11 +69,12 @@ export default () => {
           />
           <TextInput
             value={email}
+            type={"email"}
             onChange={(event) => {
               setEmail(event.target.value);
             }}
             placeholder={"Email"}
-            style={{ ...textInputStyle, marginLeft: 12 }}
+            style={{ ...textInputStyle, marginLeft: isMobile ? 0 : 12, marginTop: isMobile ? 12 : 0 }}
           />
         </View>
         <View style={{ flex: 1, paddingTop: 12 }}>
@@ -93,8 +104,29 @@ export default () => {
             paddingLeft: 16,
             paddingRight: 16,
           }}
-          onPress={() => {
-            // console.log("@@@@@@name,message,email, subject,", name, message, email, subject);
+          onPress={async () => {
+            try {
+              if (email && name && message) {
+                db.collection("emails")
+                  .add({
+                    name,
+                    email,
+                    message,
+                    subject,
+                    time: new Date(),
+                  })
+                  .then((res) => {
+                    setName("");
+                    setEmail("");
+                    setSubject("");
+                    setMessage("");
+                    setsuccessMessage(true);
+                    console.log("@@@@@@res", res);
+                  });
+              }
+            } catch (e) {
+              console.log("@@@@@@Error in sending message", e);
+            }
           }}
         >
           <Text style={{ color: textColor_300, ...F1_R_HeadLine16 }} className={"btntext"}>

@@ -1,5 +1,5 @@
 /** @format */
 
-import AppNavigator from "./AppNavigator";
+import HomeScreen from "./HomeScreen";
 
-export default AppNavigator;
+export default HomeScreen;
