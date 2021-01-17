@@ -155,10 +155,34 @@ const ProjectDetailCard = ({ item, index, onPress }) => {
       <Text style={{ flex: 1, paddingTop: 12, color: textColor_50, ...F1_R_HeadLine14, wordBreak: "break-word" }}>
         {description}
       </Text>
-      {link ? (
+      <View style={{ flexDirection: "row" }}>
+        {link ? (
+          <TouchableOpacity
+            onPress={() => {
+              window.open(link, "_blank");
+            }}
+            className={"more-btn project-card"}
+            style={{
+              padding: 8,
+              paddingLeft: 20,
+              paddingRight: 20,
+              flexDirection: "row",
+              alignItems: "center",
+              marginTop: 8,
+              borderStyle: "solid",
+              borderWidth: 2,
+              borderRadius: 4,
+              cursor: "pointer",
+            }}
+          >
+            <Text style={{ color: textColor_300, ...F1_R_HeadLine16 }}>View More aboit it! </Text>
+          </TouchableOpacity>
+        ) : (
+          void 0
+        )}
         <TouchableOpacity
           onPress={() => {
-            window.open(link, "_blank");
+            onPress(void 0);
           }}
           className={"more-btn project-card"}
           style={{
@@ -172,13 +196,12 @@ const ProjectDetailCard = ({ item, index, onPress }) => {
             borderWidth: 2,
             borderRadius: 4,
             cursor: "pointer",
+            marginLeft: 12,
           }}
         >
-          <Text style={{ color: textColor_300, ...F1_R_HeadLine16 }}>View More aboit it! </Text>
+          <Text style={{ color: textColor_300, ...F1_R_HeadLine16 }}>Back </Text>
         </TouchableOpacity>
-      ) : (
-        void 0
-      )}
+      </View>
     </TouchableOpacity>
   );
 };
