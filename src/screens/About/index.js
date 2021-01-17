@@ -31,6 +31,7 @@ export default () => {
           flex: 1,
         }}
       >
+        
         <Text
           style={{
             color: textColor_50,
@@ -46,7 +47,7 @@ export default () => {
         <Text style={{ paddingTop: 20, paddingBottom: 20, color: textColor_200, ...F1_M_HeadLine18 }}>
           “ Extremely motivated to constantly develop my skills and grow professionally. I strictly believe in project
           based learning. approach. i am Frontend Developer with 2 years of industrial experience inbuilding and
-          maintaining responsiveand optimized websites and cross-platform mobile applications. ”
+          maintaining responsive and optimized websites and cross-platform mobile applications. ”
         </Text>
       </View>
     </View>

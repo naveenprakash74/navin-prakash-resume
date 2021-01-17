@@ -39,7 +39,6 @@ const Home = () => {
             borderStyle: "solid",
             borderWidth: 2,
             borderColor: borderColor,
-            borderWidth: 2,
             borderRadius: 4,
             cursor: "pointer",
             maxWidth: 150,

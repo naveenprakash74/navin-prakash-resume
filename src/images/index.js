@@ -14,6 +14,8 @@ const publicationsIcon = "/images/publications.svg";
 const publicationsIconLight = "/images/publicationsLight.svg";
 const skillsIcon = "/images/skills.svg";
 const skillsLightIcon = "/images/skillsLight.svg";
+const backIcon = "/images/backIcon.svg";
+const backIconLight = "/images/backIconLight.svg";
 export {
   MenuIcon,
   MenuLightIcon,
@@ -30,4 +32,6 @@ export {
   publicationsIconLight,
   skillsIcon,
   skillsLightIcon,
+  backIcon,
+  backIconLight,
 };
