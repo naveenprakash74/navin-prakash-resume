@@ -6,6 +6,7 @@ import { View, Text, TextInput, TouchableOpacity, TextAreaInput } from "../../co
 import { colors } from "../../theme/colors";
 import { F1_M_HeadLine14, F1_M_HeadLine18, F1_M_HeadLine24, F1_R_HeadLine16 } from "../../theme/fonts";
 import { isMobile } from "../../Utility";
+import { sendEmail } from "../../EmailApi/configEmail";
 const { surface_800, textColor_50, surface_green, textColor_200, borderColor, surface_700, textColor_300 } = colors;
 export default (props) => {
   const [name, setName] = useState(void 0);
@@ -107,26 +108,25 @@ export default (props) => {
           onPress={async () => {
             try {
               if (email && name && message) {
-                db.collection("emails")
-                  .add({
-                    name,
-                    email,
-                    message,
-                    subject,
-                    time: new Date(),
-                  })
-                  .then((res) => {
-                    setName("");
-                    setEmail("");
-                    setSubject("");
-                    setMessage("");
-                    setsuccessMessage(true);
-                    console.log("@@@@@@res", res);
-                  });
+                sendEmail({ email, name, message, subject }).then((res) => {
+                  db.collection("emails")
+                    .add({
+                      name,
+                      email,
+                      message,
+                      subject,
+                      time: new Date(),
+                    })
+                    .then((res) => {
+                      setName("");
+                      setEmail("");
+                      setSubject("");
+                      setMessage("");
+                      setsuccessMessage(true);
+                    });
+                });
               }
-            } catch (e) {
-              console.log("@@@@@@Error in sending message", e);
-            }
+            } catch (e) {}
           }}
         >
           <Text style={{ color: textColor_300, ...F1_R_HeadLine16 }} className={"btntext"}>
