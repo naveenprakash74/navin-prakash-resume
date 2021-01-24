@@ -19,7 +19,7 @@ const { borderColor, textColor_200, textColor_50 } = colors;
 const DrawerOptions = ({ closeModal, options }) => {
   const history = useHistory();
   return (
-    <View style={{ flex: 1, overflow: "hidden" }}>
+    <View style={{ flex: 1, overflow: "auto" }}>
       {options.map((item) => {
         const { onPress, title, icon, link } = item;
         return (

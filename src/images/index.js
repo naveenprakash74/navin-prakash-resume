@@ -16,6 +16,19 @@ const skillsIcon = "/images/skills.svg";
 const skillsLightIcon = "/images/skillsLight.svg";
 const backIcon = "/images/backIcon.svg";
 const backIconLight = "/images/backIconLight.svg";
+const linkedinLightIcon = "/images/linkedinLight.svg";
+const linkedinIcon = "/images/linkedin.svg";
+const stackOverflowIcon = "/images/stack-overflow.svg";
+const stackOverFlowLightIcon = "/images/stack-overflowLight.svg";
+const instagramLightIcon = "/images/instagramLight.svg";
+const instagramIcon = "/images/instagram.svg";
+const githubLightIcon = "/images/githubLight.svg";
+const githubIcon = "/images/github.svg";
+const facebookLightIcon = "/images/facebookLight.svg";
+const facebookIcon = "/images/facebook.svg";
+const emailLightIcon = "/images/emailLight.svg";
+const emailIcon = "/images/email.svg";
+
 export {
   MenuIcon,
   MenuLightIcon,
@@ -34,4 +47,16 @@ export {
   skillsLightIcon,
   backIcon,
   backIconLight,
+  linkedinLightIcon,
+  linkedinIcon,
+  stackOverflowIcon,
+  stackOverFlowLightIcon,
+  instagramLightIcon,
+  instagramIcon,
+  githubLightIcon,
+  githubIcon,
+  facebookLightIcon,
+  facebookIcon,
+  emailLightIcon,
+  emailIcon,
 };

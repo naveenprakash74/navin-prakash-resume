@@ -58,3 +58,36 @@ font-family: 'Tillana', cursive; */
   border-color: #03dac6;
   color: #03dac6;
 }
+/* width */
+::-webkit-scrollbar {
+  width: 2px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #212121;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* [title] {
+  position: relative;
+}
+
+[title]:hover::before {
+  content: attr(title);
+  position: absolute;
+  top:50px;
+  z-index: 1;
+  width:"auto";
+  display: inline-block;
+  padding: 8px;
+  border-radius: 2px;
+  background: #000;
+  font-size: 12px;
+  color:#fff;
+  box-shadow: 6px 10px 21px 0px rgba(50, 50, 50, 0.32);
+} */
