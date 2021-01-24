@@ -24,7 +24,7 @@ export const ContactForm = (props) => {
   };
 
   return (
-    <View style={{ flex: 1, overflow: "hidden", minWidth: 400 }}>
+    <View style={{ flex: isMobile ? void 0 : 1, overflow: "hidden" }}>
       <View style={{ alignItems: "center" }}>
         <Text style={{ marginTop: 12, color: textColor_200, ...F1_M_HeadLine18 }}>
           Have a question or want to work together?
@@ -37,7 +37,7 @@ export const ContactForm = (props) => {
           void 0
         )}
       </View>
-      <View style={{ flexDirection: isMobile ? "column" : "row", overflow: "hidden", marginTop: 12 }}>
+      <View style={{ flex:1,flexDirection: isMobile ? "column" : "row", overflow: "hidden", marginTop: 12 }}>
         <TextInput
           value={name}
           onChange={(event) => {
