@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { db } from "../../firebase/firebaseConfig";
 import { View, Text, TextInput, TouchableOpacity, TextAreaInput } from "../../components";
 import { colors } from "../../theme/colors";
-import { F1_M_HeadLine14, F1_M_HeadLine18, F1_M_HeadLine24, F1_R_HeadLine16 } from "../../theme/fonts";
+import { F1_M_HeadLine14, F1_M_HeadLine18, F1_R_HeadLine16 } from "../../theme/fonts";
 import { isMobile } from "../../Utility";
 import { sendEmail } from "../../EmailApi/configEmail";
 const { surface_green, textColor_200, surface_800, textColor_300 } = colors;
@@ -15,6 +15,7 @@ export const ContactForm = (props) => {
   const [email, setEmail] = useState(void 0);
   const [subject, setSubject] = useState(void 0);
   const [successMessage, setsuccessMessage] = useState(void 0);
+  const [loader, setloader] = useState(false);
   const textInputStyle = {
     padding: 14,
     backgroundColor: surface_800,
@@ -22,9 +23,52 @@ export const ContactForm = (props) => {
     border: 0,
     color: textColor_300,
   };
-
+  const handelSubmit = async () => {
+    try {
+      if (email && name && message) {
+        setloader(true);
+        sendEmail({ email, name, message, subject })
+          .then((res) => {
+            db.collection("emails")
+              .add({
+                name,
+                email,
+                message,
+                subject,
+                time: new Date(),
+              })
+              .then((res) => {
+                setName("");
+                setEmail("");
+                setSubject("");
+                setMessage("");
+                setsuccessMessage(true);
+                setloader(false);
+              });
+          })
+          .catch((err) => {
+            db.collection("emails")
+              .add({
+                name,
+                email,
+                message,
+                subject,
+                time: new Date(),
+              })
+              .then((res) => {
+                setName("");
+                setEmail("");
+                setSubject("");
+                setMessage("");
+                setsuccessMessage(true);
+                setloader(false);
+              });
+          });
+      }
+    } catch (e) {}
+  };
   return (
-    <View style={{ flex: isMobile ? void 0 : 1, overflow: "hidden" }}>
+    <View style={{ flex: isMobile ? void 0 : 1, overflow: "hidden", minWidth: isMobile ? void 0 : 400 }}>
       <View style={{ alignItems: "center" }}>
         <Text style={{ marginTop: 12, color: textColor_200, ...F1_M_HeadLine18 }}>
           Have a question or want to work together?
@@ -37,10 +81,11 @@ export const ContactForm = (props) => {
           void 0
         )}
       </View>
-      <View style={{ flex:1,flexDirection: isMobile ? "column" : "row", overflow: "hidden", marginTop: 12 }}>
+      <View style={{ flex: 1, flexDirection: isMobile ? "column" : "row", overflow: "hidden", marginTop: 12 }}>
         <TextInput
           value={name}
           onChange={(event) => {
+            if (loader) return false;
             setName(event.target.value);
           }}
           placeholder={"Name"}
@@ -50,6 +95,8 @@ export const ContactForm = (props) => {
           value={email}
           type={"email"}
           onChange={(event) => {
+            if (loader) return false;
+
             setEmail(event.target.value);
           }}
           placeholder={"Email"}
@@ -61,6 +108,8 @@ export const ContactForm = (props) => {
           value={subject}
           placeholder={"Subject"}
           onChange={(event) => {
+            if (loader) return false;
+
             setSubject(event.target.value);
           }}
           style={textInputStyle}
@@ -69,6 +118,8 @@ export const ContactForm = (props) => {
           value={message}
           placeholder={"Message"}
           onChange={(event) => {
+            if (loader) return false;
+
             setMessage(event.target.value);
           }}
           style={{ ...textInputStyle, marginTop: 12 }}
@@ -83,32 +134,10 @@ export const ContactForm = (props) => {
           paddingLeft: 16,
           paddingRight: 16,
         }}
-        onPress={async () => {
-          try {
-            if (email && name && message) {
-              sendEmail({ email, name, message, subject }).then((res) => {
-                db.collection("emails")
-                  .add({
-                    name,
-                    email,
-                    message,
-                    subject,
-                    time: new Date(),
-                  })
-                  .then((res) => {
-                    setName("");
-                    setEmail("");
-                    setSubject("");
-                    setMessage("");
-                    setsuccessMessage(true);
-                  });
-              });
-            }
-          } catch (e) {}
-        }}
+        onPress={handelSubmit}
       >
         <Text style={{ color: textColor_300, ...F1_R_HeadLine16 }} className={"btntext"}>
-          Send
+          {!loader ? "Send" : "Sending..."}
         </Text>
       </TouchableOpacity>
     </View>

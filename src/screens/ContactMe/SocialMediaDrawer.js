@@ -1,38 +1,31 @@
 /** @format */
 
-import React from "react";
-import { View, Image, Text, TouchableOpacity } from "../../components";
+import React, { useState } from "react";
+import { View, Image, TouchableOpacity } from "../../components";
 import { SocialMediaData } from "../../ConfigurationData";
 import { colors } from "../../theme/colors";
-import { F1_R_HeadLine16 } from "../../theme/fonts";
 import { shadow } from "../../theme/shadow";
-const { textColor_50, surface_700 } = colors;
-export const SocialMediaDrawer = ({ removeText }) => {
+import { isMobile } from "../../Utility";
+const { surface_700, surface_800 } = colors;
+export const SocialMediaDrawer = () => {
+  const [isHover, setIsHover] = useState(false);
+
   let containerStyle = {
-    flex: 1,
-    justifyContent: "center",
+    justifyContent: "space-between",
     alignItems: "center",
-    overflow: "auto",
-    flexDirection: "column",
+    flexDirection: "row",
+    backgroundColor: isMobile ? surface_700 : surface_800,
+    borderRadius: 24,
+    padding: 8,
+    paddingLeft: 12,
+    paddingRight: 12,
+    marginTop: 24,
+    marginBottom: 24,
+    ...(isHover || isMobile ? shadow : {}),
   };
-  if (removeText) {
-    containerStyle = {
-      justifyContent: "center",
-      alignItems: "center",
-      flexDirection: "row",
-      backgroundColor: surface_700,
-      borderRadius: 24,
-      padding: 8,
-      paddingLeft: 12,
-      paddingRight: 12,
-      marginTop: 24,
-      marginBottom: 24,
-      ...shadow,
-    };
-  }
   return (
-    <View style={containerStyle}>
-      {SocialMediaData.map((item) => {
+    <View style={containerStyle} onMouseLeave={() => setIsHover(false)} onMouseEnter={() => setIsHover(true)}>
+      {SocialMediaData.map((item, index) => {
         const { icon, label, link } = item;
         return (
           <TouchableOpacity
@@ -42,14 +35,12 @@ export const SocialMediaDrawer = ({ removeText }) => {
             }}
             style={{
               cursor: "pointer",
-              marginTop: removeText ? 0 : 8,
-              padding: removeText ? 8 : 12,
+              padding: 8,
               flexDirection: "row",
               alignItems: "center",
             }}
           >
             <Image source={icon} style={{ marginRight: 8, height: 28, width: 28 }} />
-            {!removeText ? <Text style={{ color: textColor_50, ...F1_R_HeadLine16 }}>{label}</Text> : void 0}
           </TouchableOpacity>
         );
       })}

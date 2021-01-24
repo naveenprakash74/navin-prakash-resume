@@ -17,7 +17,7 @@ export default (props) => {
         justifyContent: "center",
         overflow: "hidden",
         backgroundColor: surface_800,
-        paddingTop: 80,
+        paddingTop: isMobile ? 80 : 0,
       }}
     >
       <View
@@ -44,25 +44,10 @@ export default (props) => {
             Contact Me
           </Text>
         </View>
-        <View style={{ flex: 1, alignItems: "center", flexDirection: isMobile ? "column" : "row", overflow: "hidden" }}>
-          {isMobile ? void 0 : <SocialMediaDrawer removeText={isMobile} />}
-          {isMobile ? (
-            void 0
-          ) : (
-            <View
-              style={{
-                width: 2,
-                height: "70%",
-                alignSelf: "center",
-                backgroundColor: surface_green,
-                margin: 20,
-              }}
-            />
-          )}
-          <ContactForm />
-        </View>
+        {isMobile ? void 0 : <SocialMediaDrawer />}
+        <ContactForm />
       </View>
-      {isMobile ? <SocialMediaDrawer removeText={isMobile} /> : void 0}
+      {isMobile ? <SocialMediaDrawer /> : void 0}
     </View>
   );
 };
